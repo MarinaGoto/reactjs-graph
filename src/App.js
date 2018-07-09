@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import ShowPopulation from './comp/ShowPopulation';
-// import InputForm from './comp/InputForm';
+import InputForm from './backup/InputForm';
 import Chart from './comp/Chart';
 import { connect } from "react-redux";
 
@@ -18,16 +18,17 @@ class App extends Component {
         <header className="App-header">
 
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to React&Redux</h1>
           </header>
           <div>
                 <ShowPopulation/>
 
-                 {this.props.user.showlist ? <Chart/> : null}
+              {this.props.user.showlist ? <Chart/> : null}
+              {this.props.user.showelse ? <InputForm/> : null}
 
 
-            </div>
 
+          </div>
 
 
       </div>

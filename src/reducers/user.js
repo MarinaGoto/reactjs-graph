@@ -3,19 +3,26 @@ export default function userReducer(state = {
 
                                         //mine
                                           showlist:false,
-                                          opopulation:500000,
+                                          showelse:false,
+                                          population:500000,
 
                                       }, action) {
 
     switch (action.type) {
 
-// Show Chart
+               // Show Chart
             case "SHOW_List":
 
-                state = {...state, showlist : action.payload};
+                state = {...state, showlist : !state.showlist};
                 break;
 
-/////////////Second
+                // Else Chart
+        case "ELSE_List":
+
+            state = {...state, showelse : action.payload};
+            break;
+
+                //Second
 case "OSLO_POPULATION":
 
     state = {...state, population: action.payload};

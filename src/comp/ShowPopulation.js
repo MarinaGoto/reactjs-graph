@@ -1,18 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import {showlist } from '../actions/user';
+import {showlist, hidelist, showelse, hideelse } from '../actions/user';
 
 class First extends React.Component {
 
   constructor() {
         super();
-this.showlist=this.showlist.bind(this);
+      this.reactmethod=this.reactmethod.bind(this);
 
     }
 
 
-showlist(){
+    reactmethod(){
 this.props.showlist();
+
+    //    setTimeout(() =>  this.props.hidelist(), 1000);
+
 
 }
 
@@ -20,21 +23,18 @@ this.props.showlist();
     return (
       <div>
         <h1> Show Population chart</h1>
-        <button onClick={this.props.showlist}>
+        <button onClick={this.reactmethod}>
         Click here to show Chart
         </button>
+          <button onClick={this.props.showelse}>
+              Show something else
+          </button>
       </div>
     );
   }
 }
 
 
-function mapStateToProps(state) {
-
-    return {
-        user: state.user
-    }
-}
 
 
-export default connect(mapStateToProps, {showlist})(First);
+export default connect(null, {showlist, hidelist, showelse, hideelse})(First);

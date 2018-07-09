@@ -8,6 +8,14 @@ export function showlist() {
     });
   };
 }
+export function hidelist() {
+    return dispatch => {
+        dispatch({
+            type: "SHOW_List",
+            payload: false
+        });
+    };
+}
 
 export function oslo_population(value) {
   return dispatch => {
@@ -16,4 +24,20 @@ export function oslo_population(value) {
       payload: value
     });
   };
+}
+export function showelse() {
+    return dispatch => {
+        dispatch({
+            type: "ELSE_List",
+            payload: true
+        });
+    };
+}
+export function hideelse() {
+    return dispatch => {
+        dispatch({
+            type: "ELSE_List",
+            payload: false
+        });
+    };
 }
